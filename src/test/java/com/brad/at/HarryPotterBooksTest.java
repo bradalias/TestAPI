@@ -23,7 +23,12 @@ public class HarryPotterBooksTest extends HarryPotterBaseTest
 
         List<BookVO> booksVO = Arrays.asList(response.as(BookVO[].class));
 
+        softAssert.assertEquals(
+                response.getStatusCode(),
+                200,
+                "Was the correct status code of 200 returned?");
 
+        //booksVO.stream().filter(x-> x.getIndex())
 
         softAssert.assertAll();
     }
