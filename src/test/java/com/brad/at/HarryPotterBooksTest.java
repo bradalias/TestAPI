@@ -23,7 +23,7 @@ public class HarryPotterBooksTest extends HarryPotterBaseTest
 
         List<BookVO> booksVO = Arrays.asList(response.as(BookVO[].class));
 
-        
+
 
         softAssert.assertAll();
     }
