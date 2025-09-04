@@ -1,12 +1,23 @@
 package com.brad.at.services;
 
+//import com.brad.at.services.harrypotter.HarryPotterHeaders;
 import io.restassured.RestAssured;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 
-public class BaseTest
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.context.annotation.ComponentScan;
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+
+//@Configuration
+//@ComponentScan
+public class BaseTest //extends AbstractTestNGSpringContextTests
 {
-    protected String baseURL = "https://potterapi-fedeperin.vercel.app";
+    //@Autowired
+    //protected HarryPotterHeaders harryPotterHeaders;
+
+    protected String baseURL = "https://potterapi-fedeperin.vercel.app/en";
 
     protected Response get(Headers inHeaders, String inURL)
     {

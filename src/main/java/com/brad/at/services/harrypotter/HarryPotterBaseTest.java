@@ -7,6 +7,6 @@ public class HarryPotterBaseTest extends BaseTest
 {
     protected String getBooksURL()
     {
-        return baseURL + HarryPotterConstants.Paths.BOOKS.toString();
+        return baseURL + HarryPotterConstants.Paths.BOOKS;
     }
 }
