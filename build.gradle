@@ -10,10 +10,16 @@ repositories {
 }
 
 dependencies {
+    testImplementation("org.springframework.boot:spring-boot-starter-test:4.0.0-M2")
+    implementation("org.springframework:spring-jdbc:7.0.0-M8")
     testImplementation("org.testng:testng:7.11.0")
-    testImplementation("io.rest-assured:rest-assured:5.5.6")
-    testImplementation("org.springframework.restdocs:spring-restdocs-restassured:3.0.5")
+    implementation("io.rest-assured:rest-assured:5.5.6")
     implementation("io.rest-assured:json-path:5.5.6")
+    implementation("org.projectlombok:lombok:1.18.38")
+    implementation("jakarta.xml.bind:jakarta.xml.bind-api:4.0.2")
+
+    //SHOULD BE INCLUDED WITH SPRING BOOT STARTER TEST
+    //testImplementation("org.hamcrest:hamcrest:3.0")
 }
 
 test {
