@@ -82,4 +82,18 @@ public class BaseTest extends AbstractTestNGSpringContextTests
                     .log().body()
                     .extract().response();
     }
+
+    protected String getStringResponse(Headers inHeaders, String inURL)
+    {
+        return RestAssured
+                .given()
+                    .log().all()
+                    .headers(inHeaders)
+                .when()
+                    .get(inURL)
+                .then()
+                    .log().body()
+                    .extract().response()
+                    .asString();
+    }
 }
