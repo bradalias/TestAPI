@@ -15,6 +15,8 @@ import org.springframework.test.context.TestExecutionListeners;
 
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 
+import java.util.Map;
+
 @SpringBootTest(classes = TestConfig.class)
 @TestExecutionListeners(value = ReportListener.class, mergeMode = TestExecutionListeners.MergeMode.MERGE_WITH_DEFAULTS)
 public class BaseTest extends AbstractTestNGSpringContextTests
@@ -49,6 +51,20 @@ public class BaseTest extends AbstractTestNGSpringContextTests
                 .given()
                     .log().all()
                     .headers(inHeaders)
+                .when()
+                    .get(inURL)
+                .then()
+                    .log().body()
+                    .extract().response();
+    }
+
+    protected Response get(Headers inHeaders, String inURL, Map<String, String> inQueryParams)
+    {
+        return RestAssured
+                .given()
+                    .log().all()
+                    .headers(inHeaders)
+                    .queryParams(inQueryParams)
                 .when()
                     .get(inURL)
                 .then()

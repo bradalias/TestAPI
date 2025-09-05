@@ -1,4 +1,4 @@
-package com.brad.at.valueobjects.harrypotterbooksgithub;
+package com.brad.at.valueobjects.common;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -8,16 +8,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BooksGitHubVO
+public class ErrorResponseVO
 {
-    @JsonProperty()
-    private List<BookGitHubVO> books;
+    @JsonProperty("error")
+    private String error;
 }
