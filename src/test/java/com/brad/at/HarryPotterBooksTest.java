@@ -84,7 +84,7 @@ public class HarryPotterBooksTest extends HarryPotterBaseTest
     {
         CustomSoftAssert customSoftAssert = getCustomSoftAssert();
 
-        
+
 
         customSoftAssert.assertAll();
     }
