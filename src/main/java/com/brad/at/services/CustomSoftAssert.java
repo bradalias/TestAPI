@@ -2,13 +2,16 @@ package com.brad.at.services;
 
 import com.brad.at.util.testreport.ExtentLogger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.testng.asserts.IAssert;
 import org.testng.asserts.SoftAssert;
 
 @Component
-@Scope("prototype")
+//@Scope("prototype")
+//USING THE CONSTANT INSTEAD OF THE STRING WORKS AND IS SAFER TO USE
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class CustomSoftAssert extends SoftAssert
 {
     @Autowired
